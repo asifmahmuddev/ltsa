@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+        <meta name="Author" content="Asif Mahmud" />
+        <title>Options Menu</title>
+    </head>
+
+    <body text="#000000" background="Image16.jpg">
+        <div align="right"
+            ><a href="optionsmenu.html"><img src="p2hprev.gif" border="0" height="35" width="35" /></a><a href="User-manual.html"><img src="p2hup.gif" border="0" height="35" width="35" /></a
+            ><a href="MSC_tutorial.html"><img src="p2hnext.gif" border="0" height="35" width="35" /></a
+        ></div>
+
+        <h2>
+            <font face="Arial,Helvetica">Compile-time directives</font>
+        </h2>
+
+        <hr />
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                >The following directives may be used in FSP to direct compilation. These directives are keywords in the FSP implementation for LTSA v2.6 and thus may not be used as identifers</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>minimal</b><br />
+                Forces minimisation during compilation. Can be used to prefic either a process or a composition.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>deterministic</b><br />
+                Makes the prefixed process or composition deterministic during compilation.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>property</b><br />
+                Makes the prefixed process or composition a safety property.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>import</b><br />
+                Import a process that has been saved in Aldebarfan(.aut) format.</font
+            >
+        </p>
+        <p>
+            <font face="Courier New, Courier, mono">import P = &quot;fileP.aut&quot;</font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>constraint</b><br />
+                When used instead of cosntraint for an LTL property, of the property is a safety property, then the compiler generates a process which is equivalent to the safety property with the
+                transitions to error state removed. The process may be referenced in a composition.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>animation, target, actions, controls</b><br />
+                Used to declare the mappingto a graphic animation.</font
+            >
+        </p>
+    </body>
+</html>

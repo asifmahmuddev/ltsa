@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta name="Author" content="Asif Mahmud" />
+        <title>File Menu</title>
+    </head>
+
+    <body text="#000000" bgcolor="#FFFFFF" link="#0000FF" vlink="#800080" alink="#FF0000" background="Image16.jpg">
+        <div align="RIGHT"
+            ><a href="checkmenu.html"><img src="p2hprev.gif" border="0" width="35" height="35" /></a><a href="User-manual.html"><img src="p2hup.gif" border="0" width="35" height="35" /></a
+            ><a href="windowmenu.html"><img src="p2hnext.gif" border="0" width="35" height="35" /></a
+        ></div>
+
+        <h2>
+            <font face="Arial">Build Menu</font>
+        </h2>
+        <hr />
+
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                >This menu contains all the functions necessary to generate an LTS from an FSP description. However, usually, it is not necessary to invoke these functions directly. For example,
+                compilation is implicitly invoked if the description is changed between successive calls to the safety check function.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Parse</b><br />
+                Performs a syntax check on the text in the Edit Pane. The location of the first error detected is highlighted and an error message displayed in the output window. Consequently, errors
+                are located and fixed one at a time.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                >After a successful parse, the <i>target</i> choice will contain the list of composite processes. The visible composite is the target for compilation etc. In addition, the list of
+                menu's and animations are available from <strong>Check/Run</strong> is updated.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Compile</b><br />
+                Generates an LTS for each of the component processes (whether primitive or composite) of the target composite process. After compilation, the component processes may be viewed either
+                graphically or textually - see <a href="drawpane.html">Draw Pane</a> and <a href="transitionspane.html">Transitions Pane</a>. Compile will automatically invoke parse if the FSP script
+                in the Edit Pane has been changed since the last <b>Compile</b> (or <b>Parse</b>). However, if a new target or action menu is added, <b>Parse</b> must be invoked explicitly to update
+                the target and run lists.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Compose</b><br />
+                Generates a single LTS by composing the component LTSs produced by compile for a specified target. After composition, the LTS may be viewed graphically or textually. Error messages
+                produced during composition indicate safety property violations and deadlocks.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Minimise</b><br />
+                Minimises the LTS produced by composition according to Milner's observation equivalence relation.</font
+            >
+        </p>
+    </body>
+</html>

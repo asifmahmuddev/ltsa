@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+        <meta name="Author" content="Asif Mahmud" />
+        <title>Check Menu</title>
+    </head>
+
+    <body text="#000000" link="#0000ff" vlink="#800080" background="Image16.jpg">
+        <p align="RIGHT"
+            ><a href="editmenu.html"><img src="p2hprev.gif" border="0" width="35" height="35" /></a><a href="User-manual.html"><img src="p2hup.gif" border="0" width="35" height="35" /></a
+            ><a href="buildmenu.html"><img src="p2hnext.gif" border="0" width="35" height="35" /></a
+        ></p>
+
+        <h2>
+            <font face="Arial">Check Menu</font>
+        </h2>
+        <hr />
+
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                >The analysis functions operate on the target composite process indicated in the <b>Target</b> choice box. If this has not been compiled or composed, compilation and composition are
+                automatically invoked.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Safety</b><br />
+                Performs a breadth first search on the target LTS. If a property violation or deadlock is found, the shortest trace of actions that would lead to the property violation or deadlock is
+                displayed in the output window.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Progress</b><br />
+                Computes the connected components for the target LTS. Checks for progress violations with respect to the declared progress properties. If no progress properties are declared then a
+                check with respect to a default property is performed. The default property has all the actions in the alphabet of the current target.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>LTL Property</b><br />
+                Compiles the selected LTL property into a Buchi automata using Giannakopoulou's LTL2Buchi translator and performs a model check to see if the selected target system is a model of the
+                property. The model checking algorithm for liveness properties is a depth first search for commected components as for progress properties. If an LTL property can be determined to be a
+                safety property, then a breadth first search as in safety above is performed. Partial Order Reduction can be used in both searches to reduce the number of states that have to be
+                explored to check a property.</font
+            >
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Run</b><br />
+                Performs a user-controlled animation of the target composite process. Uses the component LTSs rather than the composite LTS, so larger systems can be animated even if they cannot be
+                exhaustively checked. The DEFAULT entry in the Run list is the alphabet of the target composite process and allows explicit contol of all actions. This may be reduced by declaring an
+                explicit <strong>menu</strong> e.g.
+            </font>
+        </p>
+        <p>
+            <font face="Courier New, Courier, mono">menu RUN = {toss}</font>
+            <font face="Arial, Helvetica, sans-serif"></font>
+            <font face="Courier New" size="2"></font>
+        </p>
+        <font face="Arial, Helvetica, sans-serif">
+            <p
+                >The current state of each component LTS displayed in the Draw panel is updated by the animator. The Animator window includes <strong>Run</strong> and <strong>Step</strong> buttons.
+                These are used to control actions which are not in the action menu and consequently do not have click boxes. These buttons are not enabled if the autorun option is selected in the
+                <a href="optionsmenu.html"><strong>Options</strong></a> menu. The <strong>Run</strong> button permits a sequence of actions to occur where these actions are not explicitly controlled.
+                The <strong>Step</strong> button permits a single such action to occur.</p
+            >
+        </font>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Supertrace</b><br />
+                Depth first reachability analysis using Holtzmann's bitstate hashing technique (Supertrace). Note that Supertrace is not a complete search of the state space. Supertrace should be used
+                only where a complete search of the state space is not possible due to size.
+            </font>
+        </p>
+        <p>
+            <font face="Arial, Helvetica, sans-serif"
+                ><b>Stop</b><br />
+                This item is enabled whenever the LTSA is performing a lengthy computation. If invoked, <strong>Stop</strong> aborts the computation. It is usually invoked from the tool bar.
+            </font> </p
+        ><p> </p
+    ></body>
+</html>

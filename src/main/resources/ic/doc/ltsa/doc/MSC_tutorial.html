@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta name="Author" content="Asif Mahmud" />
+        <title>MSC tutorial</title>
+    </head>
+
+    <body text="#000000" bgcolor="#FFFFFF" link="#0000FF" vlink="#800080" alink="#FF0000" background="Image16.jpg">
+        <p align="RIGHT"
+            ><a href="directives.html"><img src="p2hprev.gif" border="0" width="35" height="35" /></a><a href="User-manual.html"><img src="p2hup.gif" border="0" width="35" height="35" /></a
+        ></p>
+
+        <h2>
+            <font face="Arial">MSC Tutorial</font>
+        </h2>
+
+        <hr />
+
+        <h3>
+            <font face="Arial,Helvetica">Drawing a Message Sequence Chart</font>
+        </h3>
+
+        <p>
+            <font face="Arial,Helvetica">
+                We will begin by constructing a simple behaviour model by drawing a couple of scenarios as basic message sequence charts (bMSCs) and then sequencing the scenarios by means of a
+                high-level message sequence chart (hMSC). The scenarios will represent logging in to a website in order to check email.
+            </font>
+        </p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                Click on the "MSC Editor" tab. You should see a white editing canvas with one box labelled <em>init</em>. At the bottom of the window should be a toolbar as shown below. To start
+                select <em>new bMSC</em> from the toolbar. It is the third button from the left of the toolbar. A dialog box will pop up asking for the name of the new bMSC. Type in "Login" and press
+                ok. A new tab will be created in the MSC editor, and you will be presented with a white screen.
+            </font>
+        </p>
+
+        <p> </p>
+        <center>
+            <img src="./MSC_tutorial_files/toolbar.jpg" alt="MSC editor toolbar" /><br />
+            <font face="Arial,Helvetica"><em>MSC Editor toolbar</em></font>
+        </center>
+        <p></p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                Click the <em>new instance</em> button (fifth from left on the toolbar) which will now be enabled. Choose <em>New</em>, click ok, and when prompted for a name, type "User". A box
+                labelled user will now be shown in the editor with a line stretching down from it. Add another instance called Browser, and another called Server. The screen should now be as below.
+            </font>
+        </p>
+
+        <p> </p>
+        <center>
+            <a href="./MSC_tutorial_files/justinsts.jpg"><img src="./MSC_tutorial_files/justinsts.jpg" border="0" width="40%" alt="bMSC with three instances" /></a><br />
+            <font face="Arial,Helvetica"><em>bMSC with three instances</em> [click image to enlarge]</font>
+        </center>
+        <p></p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                Now we will add some messages between the instances. Click the <em>new message</em> button (on the right of <em>new instance</em>), select New, and enter the name "enterPwd". This
+                message will represent the user entering their password in the browser. The cursor should now turn into a crosshair. Click once on the line coming down from User, and once on the line
+                underneath Browser at about the same height. An arrow labelled enterPassword should join the two components. Add some more messages, <em>sendPassword</em> from Browser to Server,
+                <em>personalPage</em> from Server to Browser and <em>displayPage</em> from Browser to User. You can drag the messages vertically if they do not end up in the right place. The chart
+                should now look as below.
+            </font>
+        </p>
+
+        <p> </p>
+        <center>
+            <img src="./MSC_tutorial_files/login.jpg" alt="bMSC for login" /><br />
+            <font face="Arial,Helvetica"><em>bMSC for Login</em></font>
+        </center>
+        <p></p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                If you make any mistakes in entering the MSC, you can select an element of the chart by clicking on it (it should go red) and right-clicking to bring up an edit menu. This will allow
+                you to rename or reverse arrows etc.Elements can be moved around in the diagram by dragging them. Items can also be deleted using the delete button (X) on the toolbar.
+            </font>
+        </p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                If you now click the hMSC tab at the top of the editor canvas, you will be returned to the original view, but there are now two boxes <em>init</em> and <em>Login</em>. Click the
+                <em>new transition</em> tool (fourth from left), click once in the init box, and once in the Login box. An arrow will be drawn joining them. This sequences the scenarios. Init is just
+                a starting point, but this arrow says that the first thing that can happen is Login. Now create another bMSC "Failed Login". This will be opened in the editor with all of the instances
+                already present. Add messages to create the scenario shown below. Message that have been used before can be selected from the menu in the new message dialog box rather than typing
+                their names again. They will automatically be placed on the diagram.
+            </font>
+        </p>
+        <p> </p>
+        <center>
+            <img src="./MSC_tutorial_files/failed.jpg" alt="bMSC for FailedLogin" /><br />
+            <font face="Arial,Helvetica"><em>bMSC for FailedLogin</em></font>
+        </center>
+        <p></p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                Return to the hMSC and add transitions to link the scenarios. init -&gt; FailedLogin , FailedLogin -&gt; Login , FailedLogin -&gt; FailedLogin. Add the last one by clicking the
+                <em>new transition</em> button and then clicking twice in the FailedLogin box. The resulting hMSC show be as shown below.
+            </font>
+        </p>
+
+        <p> </p>
+        <center>
+            <img src="./MSC_tutorial_files/hmsc.jpg" alt="hMSC" /><br />
+            <font face="Arial,Helvetica"><em>hMSC</em></font>
+        </center>
+        <p></p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                We now have a specification from which we can generate a behaviour model. In the main toolbar at the top of the window, click the generate button
+                <img src="./MSC_tutorial_files/genbutton.jpg" /> to generate a description of the behaviour model in FSP. This will appear in the Edit tab, but is not particularly clear to read.
+                Select the target ArchitectureModel from the drop-down list, and press the compile button <img src="./MSC_tutorial_files/compbutton.jpg" />. This will compile the FSP and generate
+                labelled transition systems (LTS) for each component (instance) in the system. To see these go to the draw tab and select a component from the list on the left. By selecting the
+                <em>Multiple LTS in draw window</em> option from the Options menu on the main menu bar you can see more than one LTS at once.
+            </font>
+        </p>
+
+        <p> </p>
+        <center>
+            <img src="./MSC_tutorial_files/draw.jpg" alt="Drawing LTS" /><br />
+            <font face="Arial,Helvetica"><em>LTS displayed in the tool</em></font>
+        </center>
+        <p></p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                We can now step through a possible sequence of actions in the model. Go to the <em>Check</em> menu and select Run -&gt; DEFAULT. A dialog box will appear with a set of actions listed.
+                Any of the actions with a tick beside them may be performed in the current state. For the model we have specificed here, in the initial state, the only possible action is
+                <em>EnterPassword</em>. Click on <em>EnterPassword</em>. In the draw window you can see the change in state of the LTS. Now click <em>sendPassword</em>. There is now a choice of
+                whether to follow the behaviour where the user is authenticated or whether they are not. If you choose <em>invalidPassword</em> you will loop round and be able to enter a password
+                again. If you choose <em>personalPage</em> you will proceed to the end of the trace.
+            </font>
+        </p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                You can load and save MSC specifications by using the File menu or toolbar buttons while the MSC Editor tab is selected. They are save as XML documents. If you have other tabs selected
+                then textual or graphical descriptions of the behaviour model will be saved.
+            </font>
+        </p>
+
+        <p>
+            <font face="Arial,Helvetica">
+                If you want to proceed to the <a href="http://www.doc.ic.ac.uk/~rbc/software/ltsa-web-tutorial.html">web animator tutorial</a>, add another scenario ReadMsg and update the hMSC as
+                shown below. Save the MSC specification as an XML file. We will use this in the next tutorial.
+            </font>
+        </p>
+
+        <center>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img valign="top" src="./MSC_tutorial_files/readmsg.jpg" /></td>
+                        <td><img valign="top" src="./MSC_tutorial_files/rmhmsc.jpg" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+        <p></p>
+        <p></p>
+        <font face="Arial,Helvetica"> To detect implied scenarios use button <img src="./MSC_tutorial_files/imp_scen_button.jpg" />. </font>
+        <p></p>
+        <font face="Arial,Helvetica">
+            For a trivial example of a MSC specification with implied scenarios try opening file <a href="https://www.doc.ic.ac.uk/ltsa/msc/tutorial/trivialexample.xml">trivialexample.xml</a> from the
+            MSC plugin.
+        </font>
+        <p></p>
+        <font face="Arial,Helvetica">
+            For more information on implied scenarios refer to S. Uchitel.
+            <a href="http://www.doc.ic.ac.uk/~su2/pubs/ThesisDoubleSided.pdf">Elaboration of Behaviour Models and Scenario-based Specifications using Implied Scenarios</a>. PhD Thesis, Imperial
+            College London, January 2003.
+        </font></body
+    ></html
+>
